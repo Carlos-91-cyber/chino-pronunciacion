@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonética y Fonología I: Pinyin y Tonos | Chino Mandarín</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* Header y Navegación */
+        header {
+            background: linear-gradient(135deg, #dc143c 0%, #ff6b6b 50%, #ffa07a 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: rgba(0,0,0,0.1);
+            padding: 1rem;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Badges */
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            padding: 0 2rem;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #dc143c;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #ff6b6b;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        h4 {
+            color: #777;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Plan de Estudio */
+        .study-plan {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .day-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .day-card.day-1, .day-card.day-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .day-card.day-3, .day-card.day-4 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .day-card.day-5, .day-card.day-6 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .day-card.day-7 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .day-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .day-card p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Actividades */
+        .activities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .activity-card {
+            border-left: 5px solid;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .activity-card.activity-1 {
+            border-color: #ff6b6b;
+        }
+
+        .activity-card.activity-2 {
+            border-color: #4ecdc4;
+        }
+
+        .activity-card.activity-3 {
+            border-color: #ffe66d;
+        }
+
+        .activity-card.activity-4 {
+            border-color: #95e1d3;
+        }
+
+        .activity-card.activity-5 {
+            border-color: #c7ceea;
+        }
+
+        .activity-card h3 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        /* Tabla Articulatoria */
+        .articulation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .articulation-table th,
+        .articulation-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .articulation-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        .articulation-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .articulation-table tr:hover {
+            background: #f0f0f0;
+        }
+
+        /* Tarjetas de Pares Mínimos */
+        .minimal-pairs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .pair-card {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .pair-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-color: #dc143c;
+            transform: translateY(-2px);
+        }
+
+        .pair-card .pinyin {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #dc143c;
+            margin-bottom: 0.5rem;
+        }
+
+        .pair-card .character {
+            font-size: 2rem;
+            margin: 0.5rem 0;
+            font-weight: 600;
+        }
+
+        .pair-card .meaning {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Tonos */
+        .tones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .tone-card {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .tone-card.tone-1 {
+            border-color: #ff6b6b;
+            background: rgba(255, 107, 107, 0.05);
+        }
+
+        .tone-card.tone-2 {
+            border-color: #4ecdc4;
+            background: rgba(78, 205, 196, 0.05);
+        }
+
+        .tone-card.tone-3 {
+            border-color: #ffe66d;
+            background: rgba(255, 230, 109, 0.05);
+        }
+
+        .tone-card.tone-4 {
+            border-color: #95e1d3;
+            background: rgba(149, 225, 211, 0.05);
+        }
+
+        .tone-card.tone-neutral {
+            border-color: #c7ceea;
+            background: rgba(199, 206, 234, 0.05);
+        }
+
+        .tone-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .tone-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .tone-graphic {
+            font-size: 3rem;
+            margin: 1rem 0;
+            font-family: monospace;
+            letter-spacing: 0.5rem;
+        }
+
+        .tone-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .tone-example {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            color: #dc143c;
+        }
+
+        /* Práctica de Sílabas */
+        .syllable-practice {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .syllable-box {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .syllable-box .pinyin {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #dc143c;
+            margin-bottom: 0.5rem;
+        }
+
+        .syllable-box .meaning {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Tabla de Cambios de Tonos */
+        .sandhi-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .sandhi-table th,
+        .sandhi-table td {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .sandhi-table th {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        .sandhi-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        /* Laboratorio de Pronunciación */
+        .pronunciation-lab {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .error-item {
+            background: white;
+            border-left: 4px solid #ff6b6b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .error-item strong {
+            color: #dc143c;
+        }
+
+        .correct-example {
+            background: white;
+            border-left: 4px solid #43e97b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .correct-example strong {
+            color: #43e97b;
+        }
+
+        /* Sección de Soluciones */
+        .solutions-section {
+            background: #f0f8ff;
+            border-left: 5px solid #4facfe;
+        }
+
+        .solution-item {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .solution-item h4 {
+            color: #4facfe;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Referencias */
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .reference-card {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .reference-card h4 {
+            color: #dc143c;
+            margin-bottom: 1rem;
+        }
+
+        .reference-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .reference-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .reference-card li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #dc143c;
+            font-weight: bold;
+        }
+
+        .reference-card a {
+            color: #4facfe;
+            text-decoration: none;
+        }
+
+        .reference-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Botones Interactivos */
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 0.5rem;
+        }
+
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .toggle-content {
+            display: none;
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .toggle-content.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                margin: 0.5rem;
+                display: block;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            .study-plan,
+            .activities,
+            .minimal-pairs,
+            .tones-grid,
+            .syllable-practice,
+            .references-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .articulation-table,
+            .sandhi-table {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Impresión */
+        @media print {
+            header, nav {
+                position: static;
+            }
+
+            .toggle-btn {
+                display: none;
+            }
+
+            .toggle-content {
+                display: block !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>🎯 Fonética y Fonología I</h1>
+        <p>Sistema Pinyin y Tonos del Chino Mandarín</p>
+        <div class="badges">
+            <span class="badge">新实用汉语课本</span>
+            <span class="badge">HSK Standard Course</span>
+            <span class="badge">Para Hispanohablantes</span>
+        </div>
+    </header>
+
+    <!-- Navegación -->
+    <nav>
+        <a href="#introduccion">Introducción</a>
+        <a href="#plan-estudio">Plan de Estudio</a>
+        <a href="#actividad-1">Iniciales</a>
+        <a href="#actividad-2">Finales</a>
+        <a href="#actividad-3">Tonos</a>
+        <a href="#actividad-4">Cambios de Tonos</a>
+        <a href="#actividad-5">Lab. Pronunciación</a>
+        <a href="#soluciones">Soluciones</a>
+        <a href="#referencias">Referencias</a>
+    </nav>
+
+    <main>
+        <!-- Sección de Introducción -->
+        <section id="introduccion">
+            <h2>📚 Introducción</h2>
+            <p>Bienvenido al estudio de la fonética y fonología del chino mandarín. Este módulo te introduce a los fundamentos esenciales para pronunciar correctamente el chino, un requisito fundamental para aprender a comunicarte efectivamente en este idioma.</p>
+            
+            <h3>¿Por qué es importante la pronunciación?</h3>
+            <p>A diferencia del español, el chino mandarín es un idioma tonal. Esto significa que la altura de la voz (tono) es crucial para el significado de las palabras. Cambiar de tono puede cambiar completamente el significado de una palabra. Por ejemplo, la sílaba "ma" puede significar:</p>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                <li><strong>mā</strong> (妈) = madre</li>
+                <li><strong>má</strong> (麻) = lino</li>
+                <li><strong>mǎ</strong> (马) = caballo</li>
+                <li><strong>mà</strong> (骂) = insultar</li>
+                <li><strong>ma</strong> (吗) = partícula interrogativa</li>
+            </ul>
+
+            <h3>Componentes del Pinyin</h3>
+            <p>El pinyin (拼音) es el sistema de romanización del chino mandarín. Cada sílaba en chino está compuesta por tres elementos:</p>
+            <ol style="margin-left: 2rem; margin-bottom: 1rem;">
+                <li><strong>Inicial (声母)</strong>: consonante inicial (opcional)</li>
+                <li><strong>Final (韵母)</strong>: núcleo vocálico y todo lo que sigue</li>
+                <li><strong>Tono (声调)</strong>: marca tonal que indica la altura de la voz</li>
+            </ol>
+
+            <h3>Los Cinco Tonos</h3>
+            <p>El chino mandarín tiene cuatro tonos principales más un tono neutro:</p>
+            <ul style="margin-left: 2rem;">
+                <li><strong>Tono 1 (高平, gāopíng)</strong>: Alto y plano - la voz se mantiene a una altura constante</li>
+                <li><strong>Tono 2 (上升, shàngshneg)</strong>: Ascendente - la voz sube gradualmente, como hacer una pregunta</li>
+                <li><strong>Tono 3 (低降升, dī jiàngshēng)</strong>: Descendente-ascendente - la voz baja y luego sube</li>
+                <li><strong>Tono 4 (高降, gāojiàng)</strong>: Descendente - la voz baja abruptamente</li>
+                <li><strong>Tono Neutro (轻声, qīngshēng)</strong>: Sin marca tonal, pronunciado de manera breve</li>
+            </ul>
+        </section>
+
+        <!-- Plan de Estudio de 7 Días -->
+        <section id="plan-estudio">
+            <h2>📅 Plan de Estudio: 7 Días</h2>
+            <p>Este plan te guiará a través de los elementos fundamentales de la pronunciación china en una semana. Dedica aproximadamente 30-45 minutos por día para máximo aprendizaje.</p>
+
+            <div class="study-plan">
+                <div class="day-card day-1">
+                    <h4>DÍA 1</h4>
+                    <p><strong>Iniciales (Parte 1)</strong></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Dental aspirada: p, t, k</p>
+                </div>
+
+                <div class="day-card day-2">
+                    <h4>DÍA 2</h4>
+                    <p><strong>Iniciales (Parte 2)</strong></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Fricativas y Retroflexas: zh, ch, sh, r, j, q, x, z, c, s</p>
+                </div>
+
+                <div class="day-card day-3">
+                    <h4>DÍA 3</h4>
+                    <p><strong>Finales (Parte 1)</strong></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Vocales simples: a, o, e, i, u, ü</p>
+                </div>
+
+                <div class="day-card day-4">
+                    <h4>DÍA 4</h4>
+                    <p><strong>Finales (Parte 2)</strong></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Diptongos y nasales: ai, ei, ao, ou, an, en, ang, eng, ong, ün</p>
+                </div>
+
+                <div class="day-card day-5">
+                    <h4>DÍA 5</h4>
+                    <p><strong>Los Cuatro Tonos</strong></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Práctica de contrastes tonales</p>
+                </div>
+
+                <div class="day-card day-6">
+                    <h4>DÍA 6</h4>
+                    <p><strong>Cambios de Tonos y Sandhi</strong></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Reglas de cambio de tonos</p>
+                </div>
+
+                <div class="day-card day-7">
+                    <h4>DÍA 7</h4>
+                    <p><strong>Revisión Integral</strong></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Repaso de todos los elementos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Actividad 1: Iniciales -->
+        <section id="actividad-1">
+            <h2>🔴 Actividad 1: Iniciales (声母)</h2>
+            <p>Las iniciales (声母 - shēngmǔ) son los sonidos consonánticos que inician una sílaba. El chino mandarín tiene 25 iniciales distintas. Las más desafiantes para hispanohablantes son las retroflexas (zh, ch, sh, r) y las palatales (j, q, x).</p>
+
+            <h3>Tabla de Iniciales del Chino Mandarín</h3>
+            <table class="articulation-table">
+                <thead>
+                    <tr>
+                        <th>Inicial</th>
+                        <th>Punto de Articulación</th>
+                        <th>Modo</th>
+                        <th>Ejemplos</th>
+                        <th>Notas para Hispanohablantes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>p</strong></td>
+                        <td>Bilabial</td>
+                        <td>Oclusiva aspirada</td>
+                        <td>pā (爬), pí (皮), pǔ (普)</td>
+                        <td>MÁS ASPIRADA que en español. Aspira fuertemente.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>b</strong></td>
+                        <td>Bilabial</td>
+                        <td>Oclusiva sorda</td>
+                        <td>bā (八), bǐ (比), bù (布)</td>
+                        <td>MENOS ASPIRADA que /p/. Suena casi como "p" española.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>m</strong></td>
+                        <td>Bilabial</td>
+                        <td>Nasal</td>
+                        <td>mā (妈), mǐ (米), mù (木)</td>
+                        <td>Similar al español. Muy importante para tonos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>f</strong></td>
+                        <td>Labiodental</td>
+                        <td>Fricativa</td>
+                        <td>fā (发), fēi (飞), fù (付)</td>
+                        <td>Similar al español. Labio inferior contra dientes superiores.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>t</strong></td>
+                        <td>Alveolar</td>
+                        <td>Oclusiva aspirada</td>
+                        <td>tā (他), tǐ (体), tù (兔)</td>
+                        <td>MÁS ASPIRADA que en español. Aspirar claramente.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>d</strong></td>
+                        <td>Alveolar</td>
+                        <td>Oclusiva sorda</td>
+                        <td>dā (打), dǐ (地), dù (度)</td>
+                        <td>Suena como "t" española, no como "d" sonora.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>n</strong></td>
+                        <td>Alveolar</td>
+                        <td>Nasal</td>
+                        <td>nā (拿), nǐ (你), nù (怒)</td>
+                        <td>Similar al español.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>l</strong></td>
+                        <td>Alveolar</td>
+                        <td>Lateral</td>
+                        <td>lā (拉), lǐ (理), lù (路)</td>
+                        <td>Similar al español, pero más clara y frontal.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>g</strong></td>
+                        <td>Velar</td>
+                        <td>Oclusiva aspirada</td>
+                        <td>gā (嘎), gǐ (几), gù (古)</td>
+                        <td>Más aspirada que en español. Pronunciar desde la garganta.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>k</strong></td>
+                        <td>Velar</td>
+                        <td>Oclusiva aspirada</td>
+                        <td>kā (卡), kǐ (咨), kù (库)</td>
+                        <td>Muy aspirada. Como soplar aire después de la "k".</td>
+                    </tr>
+                    <tr>
+                        <td><strong>h</strong></td>
+                        <td>Velar</td>
+                        <td>Fricativa</td>
+                        <td>hā (哈), hē (喝), hù (户)</td>
+                        <td>Similar al español "j" (jota). Articular desde la garganta.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>zh</strong></td>
+                        <td>Retroflexa</td>
+                        <td>Oclusiva retroflejada</td>
+                        <td>zhā (扎), zhī (纸), zhù (住)</td>
+                        <td>⭐ DIFÍCIL: Curva la lengua hacia atrás. Como "tr" en "tren" pero más atrás.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ch</strong></td>
+                        <td>Retroflexa</td>
+                        <td>Oclusiva retroflejada aspirada</td>
+                        <td>chā (茶), chī (吃), chù (初)</td>
+                        <td>⭐ DIFÍCIL: Lengua atrás como zh + aspiración. Como "ch" pero más atrás.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>sh</strong></td>
+                        <td>Retroflexa</td>
+                        <td>Fricativa retroflejada</td>
+                        <td>shā (沙), shī (十), shù (树)</td>
+                        <td>⭐ DIFÍCIL: Lengua atrás, como "sh" pero más atrás. Posición retroflexa.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>r</strong></td>
+                        <td>Retroflexa</td>
+                        <td>Fricativa retroflejada</td>
+                        <td>rā (绕), rì (日), rù (如)</td>
+                        <td>⭐ DIFÍCIL: NO como la "r" española. Fricativa retroflejada, como "j" pero fricativa.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>j</strong></td>
+                        <td>Palatal</td>
+                        <td>Oclusiva palatal</td>
+                        <td>jī (急), jiǔ (酒), jù (据)</td>
+                        <td>⭐ DIFÍCIL: Lengua al paladar duro. Como "chi" en "chico" pero más delantero.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>q</strong></td>
+                        <td>Palatal</td>
+                        <td>Oclusiva palatal aspirada</td>
+                        <td>qī (奇), qǔ (取), qù (去)</td>
+                        <td>⭐ DIFÍCIL: Como "j" pero con aspiración. Soplar aire al final.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>x</strong></td>
+                        <td>Palatal</td>
+                        <td>Fricativa palatal</td>
+                        <td>xī (西), xǐ (洗), xù (徐)</td>
+                        <td>⭐ DIFÍCIL: Lengua al paladar duro en posición frontal. Como "sh" pero delantero.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>z</strong></td>
+                        <td>Alveolar</td>
+                        <td>Fricativa alveolar</td>
+                        <td>zī (自), zǐ (子), zù (族)</td>
+                        <td>Como "z" en "zona" pero más como "ts" sin aspiración.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>c</strong></td>
+                        <td>Alveolar</td>
+                        <td>Fricativa alveolar aspirada</td>
+                        <td>cī (刺), cǐ (次), cù (粗)</td>
+                        <td>Como "z" pero aspirada. Como "ts" con aspiración.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>s</strong></td>
+                        <td>Alveolar</td>
+                        <td>Fricativa alveolar</td>
+                        <td>sī (丝), sǐ (死), sù (素)</td>
+                        <td>Similar al español. Fricativa alveolar clara.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>w</strong></td>
+                        <td>Velar</td>
+                        <td>Aproximante bilabial</td>
+                        <td>wā (蛙), wǔ (五), wù (务)</td>
+                        <td>Similar a "u" semi-consonante. Como inglés "w".</td>
+                    </tr>
+                    <tr>
+                        <td><strong>y</strong></td>
+                        <td>Palatal</td>
+                        <td>Aproximante palatal</td>
+                        <td>yā (呀), yī (衣), yù (育)</td>
+                        <td>Similar a "i" semi-consonante. Como inglés "y".</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Pares Mínimos: Iniciales Problemáticas</h3>
+            <p>Estos pares te ayudarán a distinguir entre sonidos que suelen confundir a los hispanohablantes:</p>
+
+            <h4>zh / ch / sh / r (Retroflexas) vs. j / q / x (Palatales)</h4>
+            <div class="minimal-pairs">
+                <div class="pair-card">
+                    <div class="pinyin"><strong>zī / jī</strong></div>
+                    <div class="character">紫 / 急</div>
+                    <div class="meaning">púrpura / urgente</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>chī / qī</strong></div>
+                    <div class="character">吃 / 奇</div>
+                    <div class="meaning">comer / extraño</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>shī / xī</strong></div>
+                    <div class="character">十 / 西</div>
+                    <div class="meaning">diez / oeste</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>zhā / jiā</strong></div>
+                    <div class="character">扎 / 加</div>
+                    <div class="meaning">pinchar / añadir</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>cī / qī</strong></div>
+                    <div class="character">刺 / 齐</div>
+                    <div class="meaning">espina / juntos</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>sī / xī</strong></div>
+                    <div class="character">丝 / 细</div>
+                    <div class="meaning">hilo / delgado</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>zhù / jù</strong></div>
+                    <div class="character">住 / 据</div>
+                    <div class="meaning">vivir / según</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>chù / qù</strong></div>
+                    <div class="character">初 / 去</div>
+                    <div class="meaning">inicial / ir</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>shù / xù</strong></div>
+                    <div class="character">树 / 徐</div>
+                    <div class="meaning">árbol / gradual</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>rì / nì</strong></div>
+                    <div class="character">日 / 逆</div>
+                    <div class="meaning">sol / contrario</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>zǐ / jǐ</strong></div>
+                    <div class="character">子 / 几</div>
+                    <div class="meaning">hijo / cuánto</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>cù / qù</strong></div>
+                    <div class="character">粗 / 驱</div>
+                    <div class="meaning">grueso / expulsar</div>
+                </div>
+            </div>
+
+            <h3>Práctica de Iniciales</h3>
+            <button class="toggle-btn" onclick="toggleContent(this)">Mostrar Ejercicios de Pronunciación</button>
+            <div class="toggle-content">
+                <p><strong>Ejercicio 1:</strong> Pronuncia estos sonidos prestando atención a la aspiración:</p>
+                <ul style="margin-left: 2rem;">
+                    <li>p vs. b: pā, bā, pí, bí, pǔ, bǔ</li>
+                    <li>t vs. d: tā, dā, tǐ, dǐ, tù, dù</li>
+                    <li>k vs. g: kā, gā, kǐ, gǐ, kù, gù</li>
+                </ul>
+
+                <p style="margin-top: 1rem;"><strong>Ejercicio 2:</strong> Distingue retroflexas de palatales:</p>
+                <ul style="margin-left: 2rem;">
+                    <li>Retroflejas: zhī, chī, shī, rī</li>
+                    <li>Palatales: jī, qī, xī, liú</li>
+                </ul>
+
+                <p style="margin-top: 1rem;"><strong>Ejercicio 3:</strong> Pronuncia con atención especial a zh/ch/sh/r:</p>
+                <ul style="margin-left: 2rem;">
+                    <li>zhèngzhí (正直) = íntegro</li>
+                    <li>chīchéng (吃城) = no existe, pero práctica</li>
+                    <li>shānshàng (山上) = en la montaña</li>
+                    <li>rìrì (日日) = día a día</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Actividad 2: Finales -->
+        <section id="actividad-2">
+            <h2>🔵 Actividad 2: Finales (韵母)</h2>
+            <p>Las finales (韵母 - yùnmǔ) son los componentes vocálicos y sus combinaciones. Incluyen vocales simples, diptongos y combinaciones con nasales. A diferencia del español, el chino tiene vocales que requieren redondeamiento especial, especialmente la "ü" (u con diéresis).</p>
+
+            <h3>Vocales Simples</h3>
+            <table class="articulation-table">
+                <thead>
+                    <tr>
+                        <th>Vocal</th>
+                        <th>Descripción Articulatoria</th>
+                        <th>Ejemplos</th>
+                        <th>Notas para Hispanohablantes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>a</strong></td>
+                        <td>Abierta anterior sin redondeamiento</td>
+                        <td>bā (八), pá (爬), dà (大)</td>
+                        <td>Como "a" en "casa". Más abierta que el español.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>o</strong></td>
+                        <td>Cerrada posterior redondeada</td>
+                        <td>bō (玻), pó (坡), duō (多)</td>
+                        <td>Como "o" en "como". Redondeada fuertemente.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>e</strong></td>
+                        <td>Cerrada anterior sin redondeamiento</td>
+                        <td>bē (贝), pé (培), dé (得)</td>
+                        <td>Como "e" en "pero". Un poco más cerrada que el español.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ê</strong></td>
+                        <td>Semi-cerrada anterior</td>
+                        <td>En sílabas como -ê</td>
+                        <td>Variación de "e", muy rara en inicio.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>i</strong></td>
+                        <td>Muy cerrada anterior</td>
+                        <td>bī (逼), pí (皮), dī (低)</td>
+                        <td>Como "i" en "sí". Muy cerrada, posición anterior.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>u</strong></td>
+                        <td>Muy cerrada posterior redondeada</td>
+                        <td>bū (布), pú (普), dù (度)</td>
+                        <td>Como "u" en "pú". Labios muy redondeados.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ü</strong></td>
+                        <td>Muy cerrada anterior redondeada</td>
+                        <td>nü (女), lü (绿), chü (初)</td>
+                        <td>⭐ DIFÍCIL: Decir "i" pero con labios redondeados como "u". Única como esta.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Diptongos y Triptongos</h3>
+            <table class="articulation-table">
+                <thead>
+                    <tr>
+                        <th>Combinación</th>
+                        <th>Descripción</th>
+                        <th>Ejemplos</th>
+                        <th>Notas Importantes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ai</strong></td>
+                        <td>Diptongo: a → i</td>
+                        <td>baī (败), caī (猜), daī (待)</td>
+                        <td>Como "ai" en "aire". Desliz hacia la i.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ei</strong></td>
+                        <td>Diptongo: e → i</td>
+                        <td>beī (杯), ceī (肽), deī (黑)</td>
+                        <td>Como "ei" en "peine". Movimiento claro.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ao</strong></td>
+                        <td>Diptongo: a → o</td>
+                        <td>baō (包), caō (曹), daō (刀)</td>
+                        <td>Como "ao" en "caos". Bastante claros los dos sonidos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ou</strong></td>
+                        <td>Diptongo: o → u</td>
+                        <td>bōu (搏), cōu (凑), dōu (都)</td>
+                        <td>Como "ou" en "bou". Movimiento de labios.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ia</strong></td>
+                        <td>Diptongo: i → a</td>
+                        <td>jiā (加), qiā (企), xiā (侠)</td>
+                        <td>Como "ya" pero más palatal. i + a.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ie</strong></td>
+                        <td>Diptongo: i → e</td>
+                        <td>jiē (街), qiē (切), xiē (鞋)</td>
+                        <td>Como "ye". Movimiento desde i a e.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ua</strong></td>
+                        <td>Diptongo: u → a</td>
+                        <td>guā (瓜), kuā (跨), huā (花)</td>
+                        <td>Como "ua" en "cuanto". u + a.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>uo</strong></td>
+                        <td>Diptongo: u → o</td>
+                        <td>guó (国), kuò (括), huò (或)</td>
+                        <td>Como "uo" en "cuota". Redondeamiento importante.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>üe</strong></td>
+                        <td>Diptongo: ü → e</td>
+                        <td>nüè (虐), lüè (略), jüè (觉)</td>
+                        <td>⭐ DIFÍCIL: ü + e. Muy raro, especialmente sin inicial.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>iao</strong></td>
+                        <td>Triptongo: i → a → o</td>
+                        <td>jiāo (胶), qiāo (巧), xiāo (销)</td>
+                        <td>Tres sonidos: i, a, o. Como "yao" en pinyin.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>uai</strong></td>
+                        <td>Triptongo: u → a → i</td>
+                        <td>guai (怪), kuai (块), huai (坏)</td>
+                        <td>Tres sonidos: u, a, i. Como "uai".</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Nasales Finales</h3>
+            <table class="articulation-table">
+                <thead>
+                    <tr>
+                        <th>Final</th>
+                        <th>Descripción</th>
+                        <th>Ejemplos</th>
+                        <th>Diferencia con Español</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>-n</strong></td>
+                        <td>Nasal alveolar final</td>
+                        <td>bān (班), cān (餐), dān (单)</td>
+                        <td>Como "n" en "cane". Alveolar, no velar.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>-ng</strong></td>
+                        <td>Nasal velar final</td>
+                        <td>bāng (帮), cāng (仓), dāng (当)</td>
+                        <td>⭐ IMPORTANTE: Como "ng" en "sing" inglés, no como "n". Velar.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>-m</strong></td>
+                        <td>Nasal bilabial final</td>
+                        <td>bām (偏), cām (参), dām (谈)</td>
+                        <td>Como "m" final. Muy raro excepto en algunas palabras.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>La Vocal ü (u Redondeada Frontal)</h3>
+            <p><strong>Este es uno de los puntos más desafiantes para hispanohablantes.</strong></p>
+            
+            <div class="error-item">
+                <p><strong>❌ Error Común:</strong> Pronunciar "ü" como "u" normal</p>
+                <p style="margin-top: 0.5rem;">Resultado: palabras como "nǚ" (女 = mujer) y "nù" (怒 = rabia) suenan idénticas.</p>
+            </div>
+
+            <div class="correct-example">
+                <p><strong>✅ Pronunciación Correcta:</strong></p>
+                <p style="margin-top: 0.5rem;">Paso 1: Di "i" como en "sí"</p>
+                <p>Paso 2: Mientras dices "i", redondea fuertemente los labios como para decir "u"</p>
+                <p>Paso 3: Mantén la lengua en posición de "i" pero con labios de "u"</p>
+                <p>Resultado: "ü" (女)</p>
+            </div>
+
+            <h3>Práctica de Finales</h3>
+            <button class="toggle-btn" onclick="toggleContent(this)">Mostrar Ejercicios de Finales</button>
+            <div class="toggle-content">
+                <p><strong>Ejercicio 1: Vocales Simples</strong></p>
+                <ul style="margin-left: 2rem;">
+                    <li>Canta en una escala: a, e, i, o, u, ü (de agudo a grave)</li>
+                    <li>Alterna: a-e, e-i, i-o, o-u, u-ü</li>
+                </ul>
+
+                <p style="margin-top: 1rem;"><strong>Ejercicio 2: Diptongos</strong></p>
+                <ul style="margin-left: 2rem;">
+                    <li>ai, ei, ao, ou (diptongos con a y o)</li>
+                    <li>ia, ie, ua, uo (diptongos con i y u)</li>
+                    <li>Repite lentamente, notando el cambio vocálico</li>
+                </ul>
+
+                <p style="margin-top: 1rem;"><strong>Ejercicio 3: Distinción -n vs -ng</strong></p>
+                <ul style="margin-left: 2rem;">
+                    <li>bān (班) vs bāng (帮): "n" alveolar vs "ng" velar</li>
+                    <li>cān (餐) vs cāng (仓)</li>
+                    <li>dān (单) vs dāng (当)</li>
+                    <li>PRÁCTICA: San San vs. Sang Sang</li>
+                </ul>
+
+                <p style="margin-top: 1rem;"><strong>Ejercicio 4: La ü (u redondeada)</strong></p>
+                <ul style="margin-left: 2rem;">
+                    <li>Practica la secuencia: i → i (con labios redondeados) = ü</li>
+                    <li>nü (女), lü (绿), xü (虚)</li>
+                    <li>Contrasta: nù (怒) vs nü (女)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Actividad 3: Los Cuatro Tonos -->
+        <section id="actividad-3">
+            <h2>🟡 Actividad 3: Los Cuatro Tonos + Tono Neutro</h2>
+            <p>Este es probablemente el aspecto más importante y desafiante de la pronunciación del chino. La tona no es solo "acentuación", sino que cambia el significado completamente. Dominar los tonos es esencial.</p>
+
+            <h3>Visualización de Tonos</h3>
+            <div class="tones-grid">
+                <div class="tone-card tone-1">
+                    <div class="tone-number">1️⃣</div>
+                    <div class="tone-name">TONO ALTO Y PLANO</div>
+                    <div class="tone-graphic">¯ ¯ ¯ ¯</div>
+                    <div class="tone-description">
+                        <strong>La voz se mantiene a una altura CONSTANTE durante toda la sílaba.</strong><br>
+                        Como si cantaras una nota musical sostenida.<br>
+                        Ejemplo: mā (妈 = madre)
+                    </div>
+                </div>
+
+                <div class="tone-card tone-2">
+                    <div class="tone-number">2️⃣</div>
+                    <div class="tone-name">TONO ASCENDENTE</div>
+                    <div class="tone-graphic">╱ ╱ ╱ ╱</div>
+                    <div class="tone-description">
+                        <strong>La voz SUBE GRADUALMENTE.</strong><br>
+                        Como cuando haces una pregunta en español (entonación interrogativa).<br>
+                        Ejemplo: má (麻 = lino)
+                    </div>
+                </div>
+
+                <div class="tone-card tone-3">
+                    <div class="tone-number">3️⃣</div>
+                    <div class="tone-name">TONO DESCENDENTE-ASCENDENTE</div>
+                    <div class="tone-graphic">╲ ╱ ╲ ╱</div>
+                    <div class="tone-description">
+                        <strong>La voz BAJA y luego SUBE.</strong><br>
+                        Como sorpresa o duda, pero con movimiento claro.<br>
+                        Es el tono más "profundo" y dura más que otros.<br>
+                        Ejemplo: mǎ (马 = caballo)
+                    </div>
+                </div>
+
+                <div class="tone-card tone-4">
+                    <div class="tone-number">4️⃣</div>
+                    <div class="tone-name">TONO DESCENDENTE ABRUPTO</div>
+                    <div class="tone-graphic">╲ ╲ ╲ ╲</div>
+                    <div class="tone-description">
+                        <strong>La voz CAE ABRUPTAMENTE desde lo alto.</strong><br>
+                        Como una orden o enfado.<br>
+                        Corto y directo.<br>
+                        Ejemplo: mà (骂 = insultar)
+                    </div>
+                </div>
+
+                <div class="tone-card tone-neutral">
+                    <div class="tone-number">0️⃣</div>
+                    <div class="tone-name">TONO NEUTRO</div>
+                    <div class="tone-graphic">· · · ·</div>
+                    <div class="tone-description">
+                        <strong>SIN MARCA TONAL. Muy breve y relajado.</strong><br>
+                        Se pronuncia rápidamente sin énfasis.<br>
+                        Usualmente en palabras funcionales o segundas sílabas.<br>
+                        Ejemplo: ma (吗 = partícula interrogativa)
+                    </div>
+                </div>
+            </div>
+
+            <h3>Práctica con la Sílaba "ma"</h3>
+            <p>Una de las práctica más clásicas es usar la sílaba "ma" para practicar todos los tonos:</p>
+
+            <div class="syllable-practice">
+                <div class="syllable-box">
+                    <div style="font-size: 1.1rem; color: #dc143c; margin-bottom: 0.3rem;">¯ ¯ ¯</div>
+                    <div class="pinyin">mā</div>
+                    <div class="character" style="font-size: 1.5rem;">妈</div>
+                    <div class="meaning">madre</div>
+                </div>
+
+                <div class="syllable-box">
+                    <div style="font-size: 1.1rem; color: #4ecdc4; margin-bottom: 0.3rem;">╱ ╱ ╱</div>
+                    <div class="pinyin">má</div>
+                    <div class="character" style="font-size: 1.5rem;">麻</div>
+                    <div class="meaning">lino</div>
+                </div>
+
+                <div class="syllable-box">
+                    <div style="font-size: 1.1rem; color: #ffe66d; margin-bottom: 0.3rem;">╲ ╱ ╲</div>
+                    <div class="pinyin">mǎ</div>
+                    <div class="character" style="font-size: 1.5rem;">马</div>
+                    <div class="meaning">caballo</div>
+                </div>
+
+                <div class="syllable-box">
+                    <div style="font-size: 1.1rem; color: #95e1d3; margin-bottom: 0.3rem;">╲ ╲ ╲</div>
+                    <div class="pinyin">mà</div>
+                    <div class="character" style="font-size: 1.5rem;">骂</div>
+                    <div class="meaning">insultar</div>
+                </div>
+
+                <div class="syllable-box">
+                    <div style="font-size: 1.1rem; color: #c7ceea; margin-bottom: 0.3rem;">·</div>
+                    <div class="pinyin">ma</div>
+                    <div class="character" style="font-size: 1.5rem;">吗</div>
+                    <div class="meaning">¿(marca pregunta)</div>
+                </div>
+            </div>
+
+            <h3>Pares Mínimos de Tonos</h3>
+            <p>Practica distinguiendo entre diferentes tonos de la misma sílaba base:</p>
+
+            <div class="minimal-pairs">
+                <div class="pair-card">
+                    <div class="pinyin"><strong>pā / pá</strong></div>
+                    <div class="character">爬 / 帕</div>
+                    <div class="meaning">trepar / pañuelo</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>tā / tà</strong></div>
+                    <div class="character">他 / 踏</div>
+                    <div class="meaning">él / pisar</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>kā / kǎ</strong></div>
+                    <div class="character">卡 / 卡</div>
+                    <div class="meaning">bloquear / tarjeta (diferentes significados)</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>dā / dà</strong></div>
+                    <div class="character">打 / 大</div>
+                    <div class="meaning">golpear / grande</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>nā / nà</strong></div>
+                    <div class="character">拿 / 那</div>
+                    <div class="meaning">coger / ese/esa</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>lā / là</strong></div>
+                    <div class="character">拉 / 辣</div>
+                    <div class="meaning">tirar / picante</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>gā / gà</strong></div>
+                    <div class="character">噶 / 尬</div>
+                    <div class="meaning">suena en onomatopeya / incómodo</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>hā / hà</strong></div>
+                    <div class="character">哈 / 哈</div>
+                    <div class="meaning">reír (diferentes contextos)</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>zā / zà</strong></div>
+                    <div class="character">扎 / 咋</div>
+                    <div class="meaning">pinchar / sorprendido</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>cā / là</strong></div>
+                    <div class="character">擦 / 辣</div>
+                    <div class="meaning">frotar / picante</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>sā / sà</strong></div>
+                    <div class="character">撒 / 洒</div>
+                    <div class="meaning">esparcir / verter</div>
+                </div>
+
+                <div class="pair-card">
+                    <div class="pinyin"><strong>zhā / zhà</strong></div>
+                    <div class="character">扎 / 炸</div>
+                    <div class="meaning">pinchar / freír</div>
+                </div>
+            </div>
+
+            <h3>Estrategias de Práctica de Tonos</h3>
+            <button class="toggle-btn" onclick="toggleContent(this)">Mostrar Estrategias de Aprendizaje</button>
+            <div class="toggle-content">
+                <p><strong>Estrategia 1: Entonación Comparativa</strong></p>
+                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li><strong>Tono 1 (¯):</strong> Imagina el sonido de un zumbador de microondas: "beeeep"</li>
+                    <li><strong>Tono 2 (╱):</strong> Imagina la entonación al preguntar "¿Qué?" en español</li>
+                    <li><strong>Tono 3 (╲╱):</strong> Imagina la indecisión: "Mmmm..." (baja primero, sube después)</li>
+                    <li><strong>Tono 4 (╲):</strong> Imagina la orden: "¡Basta!" (cae abruptamente)</li>
+                </ul>
+
+                <p><strong>Estrategia 2: Práctica con la Mano</strong></p>
+                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li>Levanta la mano lentamente mientras pronuncias el Tono 1</li>
+                    <li>Levanta la mano rápidamente mientras pronuncias el Tono 2</li>
+                    <li>Baja la mano, pausa, luego levanta mientras pronuncias el Tono 3</li>
+                    <li>Baja la mano abruptamente mientras pronuncias el Tono 4</li>
+                </ul>
+
+                <p><strong>Estrategia 3: Exageración Extrema</strong></p>
+                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li>Practica cada tono con una exageración extrema primero</li>
+                    <li>Luego reduce gradualmente la exageración hasta sonar natural</li>
+                    <li>Esto asegura que el movimiento tonal sea claro</li>
+                </ul>
+
+                <p><strong>Estrategia 4: Grabación y Comparación</strong></p>
+                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li>Grábate pronunciando cada tono</li>
+                    <li>Compara tu grabación con un hablante nativo</li>
+                    <li>Presta atención a la altura relativa, no absoluta</li>
+                </ul>
+
+                <p><strong>Estrategia 5: Contexto de Palabras Reales</strong></p>
+                <ul style="margin-left: 2rem;">
+                    <li>No practiques solo sílabas aisladas</li>
+                    <li>Aprende palabras completas: mā (妈 = madre), má (麻 = lino), mǎ (马 = caballo), mà (骂 = insultar)</li>
+                    <li>El contexto ayuda a la memorización</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Actividad 4: Cambios de Tonos (Sandhi) -->
+        <section id="actividad-4">
+            <h2>🟣 Actividad 4: Cambios de Tonos y Sandhi (声调变调)</h2>
+            <p>Un fenómeno fascinante del chino es el "sandhi" o cambio de tonos. Cuando dos sílabas se pronuncian juntas, el tono de la primera sílaba a menudo cambia de acuerdo con reglas predecibles. Esto afecta la pronunciación natural del idioma.</p>
+
+            <h3>Reglas Principales de Cambios Tonales</h3>
+            <table class="sandhi-table">
+                <thead>
+                    <tr>
+                        <th>Regla</th>
+                        <th>Descripción</th>
+                        <th>Ejemplos</th>
+                        <th>Explicación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tono 3 + Tono 3</strong></td>
+                        <td>Cuando dos sílabas con tono 3 se juntan, la primera se convierte en tono 2</td>
+                        <td>mǎ + mǎ = má + mǎ<br>很好 (hěn hǎo) = hén hǎo<br>管理 (guǎn lǐ) = guán lǐ</td>
+                        <td>Es difícil pronunciar dos tonos 3 seguidos, así que el primero sube (tono 2)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>一 (yī) + Tono 4</strong></td>
+                        <td>La palabra "一" (uno) pierde su tono 1 y se convierte en tono 4</td>
+                        <td>一个 (yī ge) = yì ge<br>第一 (dì yī) = dì yì<br>一定 (yī dìng) = yì dìng</td>
+                        <td>Evita dos oclusivas seguidas (tono 1 + tono 4)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>一 (yī) + Tonos 1, 2, 3</strong></td>
+                        <td>La palabra "一" se convierte en tono 2 antes de tonos 1, 2, 3</td>
+                        <td>一天 (yī tiān) = yí tiān<br>一般 (yī bān) = yí bān<br>一起 (yī qǐ) = yí qǐ</td>
+                        <td>Pronunciar "yí" (tono 2) en lugar de "yī" (tono 1)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>不 (bù) + Tono 4</strong></td>
+                        <td>La negación "不" mantiene su tono 4 antes de tonos 1, 2, 3</td>
+                        <td>不错 (bù cuò) = bù cuò<br>不好 (bù hǎo) = bù hǎo</td>
+                        <td>"不" (bù) se pronuncia normalmente (tono 4)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>不 (bù) + Tono 1, 2, 3</strong></td>
+                        <td>La negación "不" se convierte en tono 2 antes de tonos 1, 2, 3</td>
+                        <td>不买 (bù mǎi) = bú mǎi<br>不去 (bù qù) = bú qù<br>不是 (bù shì) = bú shì</td>
+                        <td>Suena más natural que tono 4 + tono 1, 2, 3</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Errores Comunes con Cambios de Tonos</h3>
+            <button class="toggle-btn" onclick="toggleContent(this)">Mostrar Errores Comunes</button>
+            <div class="toggle-content">
+                <div class="error-item">
+                    <p><strong>❌ Error 1: No aplicar la regla de Tono 3 + Tono 3</strong></p>
+                    <p style="margin-top: 0.5rem;"><strong>Incorrecto:</strong> mǎ mǎ (两个tono 3)</p>
+                    <p><strong>Correcto:</strong> má mǎ (primer tono 3 se convierte en tono 2)</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">Palabras afectadas: 很好 (hén hǎo), 管理 (guán lǐ), 美女 (méi nǚ)</p>
+                </div>
+
+                <div class="error-item">
+                    <p><strong>❌ Error 2: Olvidar el cambio de 一 (yī)</strong></p>
+                    <p style="margin-top: 0.5rem;"><strong>Incorrecto:</strong> yī ge (sin cambio)</p>
+                    <p><strong>Correcto:</strong> yì ge (tono 4 antes de tono 4, o yí ge antes de otros tonos)</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">Es muy común olvidar este cambio aunque es muy importante para sonar natural</p>
+                </div>
+
+                <div class="error-item">
+                    <p><strong>❌ Error 3: Confundir los cambios de 不 (bù)</strong></p>
+                    <p style="margin-top: 0.5rem;"><strong>Incorrecto:</strong> bù mǎi (sin cambio)</p>
+                    <p><strong>Correcto:</strong> bú mǎi (tono 4 cambia a tono 2 antes de otros tonos)</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">La regla de 不 es más complicada: mantiene tono 4 ante tono 4, pero cambia a tono 2 antes de otros</p>
+                </div>
+            </div>
+
+            <h3>Práctica de Cambios Tonales</h3>
+            <button class="toggle-btn" onclick="toggleContent(this)">Mostrar Ejercicios de Sandhi</button>
+            <div class="toggle-content">
+                <p><strong>Ejercicio 1: Tono 3 + Tono 3</strong></p>
+                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li>很好 (hěn hǎo) → hén hǎo</li>
+                    <li>管理 (guǎn lǐ) → guán lǐ</li>
+                    <li>美女 (měi nǚ) → méi nǚ</li>
+                    <li>语言 (yǔ yán) → yú yán</li>
+                    <li>老鼠 (lǎo shǔ) → láo shǔ</li>
+                </ul>
+
+                <p><strong>Ejercicio 2: 一 (yī) + otros tonos</strong></p>
+                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li>一天 (yī tiān) → yí tiān</li>
+                    <li>一个 (yī ge) → yì ge</li>
+                    <li>第一 (dì yī) → dì yì (cuando viene al final)</li>
+                    <li>一起 (yī qǐ) → yí qǐ</li>
+                    <li>一点 (yī diǎn) → yí diǎn</li>
+                </ul>
+
+                <p><strong>Ejercicio 3: 不 (bù) + otros tonos</strong></p>
+                <ul style="margin-left: 2rem;">
+                    <li>不是 (bù shì) → bú shì (cambia a tono 2)</li>
+                    <li>不好 (bù hǎo) → bú hǎo (cambia a tono 2)</li>
+                    <li>不对 (bù duì) → bú duì (cambia a tono 2)</li>
+                    <li>不错 (bù cuò) → bú cuò (cambia a tono 2)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Actividad 5: Laboratorio de Pronunciación -->
+        <section id="actividad-5">
+            <h2>🟠 Actividad 5: Laboratorio de Pronunciación</h2>
+            <p>Esta sección se enfoca en errores comunes de hispanohablantes y cómo corregirlos. La mayoría de estos errores surgen de las diferencias fundamentales entre el español y el chino.</p>
+
+            <div class="pronunciation-lab">
+                <h3>Errores Comunes de Hispanohablantes</h3>
+
+                <div class="error-item">
+                    <p><strong>Error 1: No aspirar p, t, k</strong></p>
+                    <p style="margin-top: 0.5rem;">❌ <strong>Incorrecto:</strong> pīn (piensa en la "p" española)</p>
+                    <p>✅ <strong>Correcto:</strong> pHīn (con aire después, aspira fuertemente)</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;"><strong>Cómo practicar:</strong> Coloca tu mano frente a los labios. Al pronunciar "p", debes sentir aire golpeando tu mano.</p>
+                </div>
+
+                <div class="error-item">
+                    <p><strong>Error 2: Confundir zh/ch/sh/r con j/q/x</strong></p>
+                    <p style="margin-top: 0.5rem;">❌ <strong>Incorrecto:</strong> Pronunciar "zhī" (纸) como "jī" (急)</p>
+                    <p>✅ <strong>Correcto:</strong> Lengua curvada hacia atrás (retroflexa) para zh, lengua hacia adelante en el paladar duro para j</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;"><strong>Cómo practicar:</strong> "Zh" requiere que la lengua esté ATRÁS (más atrás que "sh" español). "J" requiere lengua ADELANTE en el paladar duro.</p>
+                </div>
+
+                <div class="error-item">
+                    <p><strong>Error 3: Pronunciar r como "r" española (vibrante)</strong></p>
+                    <p style="margin-top: 0.5rem;">❌ <strong>Incorrecto:</strong> rì (日) pronunciado con la "r" vibrante española</p>
+                    <p>✅ <strong>Correcto:</strong> rì como fricativa retroflejada (como "j" en inglés pero retroflejada)</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;"><strong>Cómo practicar:</strong> La "r" china es una FRICATIVA, no una vibrante. Suena más como "rrr" suave y continuo, no como "rr" español que salta.</p>
+                </div>
+
+                <div class="error-item">
+                    <p><strong>Error 4: No diferenciar ü (u redondeada frontal) de u</strong></p>
+                    <p style="margin-top: 0.5rem;">❌ <strong>Incorrecto:</strong> nú (女) pronunciado igual a nú (普)</p>
+                    <p>✅ <strong>Correcto:</strong> nü con labios redondeados como "u" pero con lengua como "i"</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;"><strong>Cómo practicar:</strong> Redondea mucho los labios mientras dices "i" agudo. Es incómodo al principio, pero con práctica se vuelve natural.</p>
+                </div>
+
+                <div class="error-item">
+                    <p><strong>Error 5: Tonos planos o sin suficiente movimiento tonal</strong></p>
+                    <p style="margin-top: 0.5rem;">❌ <strong>Incorrecto:</strong> Pronunciar "má" (麻 = lino) con un tono 2 débil o casi plano</p>
+                    <p>✅ <strong>Correcto:</strong> Ascender claramente, como preguntando en español</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;"><strong>Cómo practicar:</strong> Exagera el movimiento tonal. Sube MUCHO en tono 2, baja MUCHO en tono 4. Luego reduce la exageración gradualmente.</p>
+                </div>
+
+                <div class="error-item">
+                    <p><strong>Error 6: Confundir -n con -ng</strong></p>
+                    <p style="margin-top: 0.5rem;">❌ <strong>Incorrecto:</strong> "ban" cuando debería ser "bang"</p>
+                    <p>✅ <strong>Correcto:</strong> "ban" (nasal alveolar) vs "bang" (nasal velar, como "sing" en inglés)</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;"><strong>Cómo practicar:</strong> Canta "nnnnn" (alveolar) vs "ngngng" (velar). Siente dónde va la nasal: -n es en los dientes, -ng está en la garganta.</p>
+                </div>
+
+                <div class="error-item">
+                    <p><strong>Error 7: Hacer consonantes oclusivas al final en lugar de fricativas</strong></p>
+                    <p style="margin-top: 0.5rem;">❌ <strong>Incorrecto:</strong> shí (十 = diez) pronunciado con una oclusiva al final</p>
+                    <p>✅ <strong>Correcto:</strong> shí con fricativa suave al final (mantén la posición de fricativa)</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;"><strong>Cómo practicar:</strong> No cierres los labios ni los dientes abruptamente. Mantén la fricativa durante toda la sílaba.</p>
+                </div>
+
+                <div class="error-item">
+                    <p><strong>Error 8: Énfasis o duración incorrectos en silabas átonas (tonos neutros)</strong></p>
+                    <p style="margin-top: 0.5rem;">❌ <strong>Incorrecto:</strong> "mā-ma" (妈妈 = mamá) con ambas sílabas en tono 1</p>
+                    <p>✅ <strong>Correcto:</strong> "mā-ma" donde la segunda "ma" es muy breve y sin tono marcado (tono neutro)</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;"><strong>Cómo practicar:</strong> Pronuncia rápido la segunda sílaba. La primera es fuerte y clara, la segunda es breve y suave.</p>
+                </div>
+            </div>
+
+            <h3>Resumen de Puntos Críticos para Hispanohablantes</h3>
+            <button class="toggle-btn" onclick="toggleContent(this)">Mostrar Resumen Crítico</button>
+            <div class="toggle-content">
+                <ol style="margin-left: 2rem;">
+                    <li style="margin-bottom: 1rem;">
+                        <strong>ASPIRACIÓN:</strong> Las oclusivas p, t, k deben estar ALTAMENTE ASPIRADAS. Es como soplar aire después de cada consonante. Esto es lo opuesto al español.
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                        <strong>RETROFLEXAS vs PALATALES:</strong> La distinción zh/ch/sh/r vs j/q/x es fundamental. Retroflexas = lengua atrás, Palatales = lengua adelante en paladar duro.
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                        <strong>TONOS:</strong> No son opcionales. El tono es tan importante como la consonante. "mā" (妈), "má" (麻), "mǎ" (马), "mà" (骂) son palabras completamente diferentes.
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                        <strong>ü (U REDONDEADA):</strong> Único en chino. Decir "i" con labios de "u". No tiene equivalente en español.
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                        <strong>-N vs -NG:</strong> "Ban" (班) es alveolar, "Bang" (帮) es velar. Sonidos completamente diferentes.
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                        <strong>R CHINA:</strong> NO es vibrante como en español. Es una fricativa retroflejada continua.
+                    </li>
+                    <li>
+                        <strong>CAMBIOS DE TONOS:</strong> Aunque aprendes los tonos "básicos", en contexto surgen cambios predecibles (sandhi). Imprescindible para sonar natural.
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Sección de Soluciones -->
+        <section id="soluciones" class="solutions-section">
+            <h2>✅ Soluciones y Explicaciones Detalladas</h2>
+            <p>Esta sección proporciona explicaciones profundas de los conceptos más desafiantes.</p>
+
+            <h3>Solución 1: Cómo Pronunciar Retroflexas (zh, ch, sh, r)</h3>
+            <div class="solution-item">
+                <h4>Paso a Paso para "zh" (como en 纸 - papel)</h4>
+                <ol style="margin-left: 2rem;">
+                    <li>Coloca la lengua de manera que el extremo apunte HACIA ATRÁS, hacia el paladar duro posterior</li>
+                    <li>Levanta el cuerpo de la lengua hacia el techo de la boca</li>
+                    <li>Pronuncia algo como "tr" pero con la lengua curvada hacia atrás</li>
+                    <li>Aspira fuertemente después de la oclusión</li>
+                    <li>Practica: "zh, zh, zh" manteniendo la posición retroflejada</li>
+                </ol>
+            </div>
+
+            <div class="solution-item">
+                <h4>Diferencia entre zh y j</h4>
+                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li><strong>ZH (retroflexa):</strong> Lengua ATRÁS (retroflexa)</li>
+                    <li><strong>J (palatal):</strong> Lengua ADELANTE (en el paladar duro frontal)</li>
+                </ul>
+                <p>Practica alternar: "zh...j...zh...j" para sentir la diferencia de posición lingual.</p>
+            </div>
+
+            <div class="solution-item">
+                <h4>Paso a Paso para "r" (como en 日 - sol)</h4>
+                <ol style="margin-left: 2rem;">
+                    <li>Coloca la lengua en posición retroflejada (como para "zh")</li>
+                    <li>Pero esta vez no hagas una oclusión completa</li>
+                    <li>Deja un pequeño espacio para que el aire fluya = FRICATIVA</li>
+                    <li>Mantén este sonido: "rrrr" (como una "r" continua, no vibrante)</li>
+                    <li>¡NO vibres! No es la "r" española. Es continua como "sh"</li>
+                </ol>
+            </div>
+
+            <h3>Solución 2: La Vocal ü (u Redondeada Frontal)</h3>
+            <div class="solution-item">
+                <h4>Técnica Práctica en Tres Pasos</h4>
+                <ol style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li><strong>Paso 1:</strong> Di "i" normalmente (como en "sí")</li>
+                    <li><strong>Paso 2:</strong> Mantén la posición de la lengua en "i", pero redondea FUERTEMENTE los labios como para "u"</li>
+                    <li><strong>Paso 3:</strong> El resultado es "ü"</li>
+                </ol>
+                <p style="margin-bottom: 1rem;"><strong>Verificación:</strong> Cuando lo hagas bien, la boca parece estar en posición de "u" pero el sonido sale como "i".</p>
+                <p><strong>Práctica:</strong> nü (女 = mujer), lü (绿 = verde), xü (虚 = vacío), jü (据 = según)</p>
+            </div>
+
+            <h3>Solución 3: Los Tonos mediante Entonación Comparativa</h3>
+            <div class="solution-item">
+                <h4>Relación con la Entonación del Español</h4>
+                <ul style="margin-left: 2rem;">
+                    <li><strong>Tono 1 (¯):</strong> Como cantando una nota constante, como "laaaaa" en una nota</li>
+                    <li><strong>Tono 2 (╱):</strong> Exactamente como preguntar en español: "¿Qué?" con entonación interrogativa</li>
+                    <li><strong>Tono 3 (╲╱):</strong> Raro en español, pero como la indecisión: "Mmmm..." (baja, pausa, sube)</li>
+                    <li><strong>Tono 4 (╲):</strong> Como una orden fuerte: "¡Vete!" (cae abruptamente)</li>
+                </ul>
+            </div>
+
+            <h3>Solución 4: Cambios de Tonos (Sandhi)</h3>
+            <div class="solution-item">
+                <h4>¿Por qué suceden los cambios de tonos?</h4>
+                <p>Los cambios de tonos ocurren porque el chino mandarín es una lengua que evoluciona naturalmente. Los hablantes pronuncian de manera más suave y natural, y los tonos adyacentes influyen entre sí.</p>
+                <p style="margin-top: 1rem;"><strong>Ejemplo:</strong> Dos sílabas en tono 3 son difíciles de pronunciar seguidas (mǎ mǎ). Es más fácil si la primera se vuelve tono 2 (má mǎ). Así que los hablantes nativos cambiaron naturalmente a esta pronunciación.</p>
+            </div>
+
+            <h3>Solución 5: Discriminación de Pares Mínimos</h3>
+            <div class="solution-item">
+                <h4>Técnica para Distinguir Sonidos Similares</h4>
+                <ol style="margin-left: 2rem;">
+                    <li>Practica LENTAMENTE cada elemento del par</li>
+                    <li>Exagera las diferencias (posición lingual, aspiración, tono, etc.)</li>
+                    <li>Luego gradualmente aumenta la velocidad</li>
+                    <li>Grábate y compara con un hablante nativo</li>
+                    <li>Practica hasta que puedas alternar rápidamente sin confundirte</li>
+                </ol>
+                <p style="margin-top: 1rem;"><strong>Ejemplo con zh vs j:</strong></p>
+                <ul style="margin-left: 2rem;">
+                    <li>Lentamente: "zhī" (retroplexa atrás) vs "jī" (palatal adelante)</li>
+                    <li>Luego: "zhī, jī, zhī, jī" (rápido alternando)</li>
+                    <li>Finalmente: "zhījī zhījī" (en frases rápidas)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Referencias -->
+        <section id="referencias">
+            <h2>📖 Referencias y Recursos Recomendados</h2>
+            <p>Usa estos recursos para profundizar tu aprendizaje de la pronunciación y fonología del chino mandarín.</p>
+
+            <div class="references-grid">
+                <div class="reference-card">
+                    <h4>📚 Libros de Texto Recomendados</h4>
+                    <ul>
+                        <li><strong>New Practical Chinese Reader</strong> (新实用汉语课本) - Excelente introducción sistemática</li>
+                        <li><strong>HSK Standard Course</strong> - Basado en estándar oficial de proficiencia</li>
+                        <li><strong>A Practical Guide to Mandarin Chinese Grammar</strong> (YUFA) - Cobertura profunda de gramatica y fonología</li>
+                        <li><strong>Hànyǔ 3: Chino para hispanohablantes</strong> - Específico para hispanohablantes</li>
+                        <li><strong>轻松学中文</strong> (Aprende Chino Fácilmente) - Enfoque lúdico y progresivo</li>
+                    </ul>
+                </div>
+
+                <div class="reference-card">
+                    <h4>🎓 Cursos en Línea</h4>
+                    <ul>
+                        <li><strong>Yoyo Chinese</strong> - Lecciones de pinyin muy claras (YouTube)</li>
+                        <li><strong>Mandarin Corner</strong> - Pronunciación con nativo hablante (YouTube)</li>
+                        <li><strong>Chinese Uncovered</strong> - Método narrativo inmersivo</li>
+                        <li><strong>Coursera/edX</strong> - Cursos universitarios de introducción</li>
+                        <li><strong>Udemy</strong> - Cursos asequibles sobre pinyin y tonos</li>
+                    </ul>
+                </div>
+
+                <div class="reference-card">
+                    <h4>📱 Aplicaciones Móviles</h4>
+                    <ul>
+                        <li><strong>Pleco</strong> - Diccionario con pronunciación de hablantes nativos</li>
+                        <li><strong>HelloChinese</strong> - Lecciones estructuradas de pronunciación</li>
+                        <li><strong>Duolingo</strong> - Práctica gamificada de vocabulario y tonos</li>
+                        <li><strong>Chinesepod</strong> - Lecciones progresivas con audio nativo</li>
+                        <li><strong>Hanzi Writer</strong> - Práctica de escritura con pronunciación</li>
+                    </ul>
+                </div>
+
+                <div class="reference-card">
+                    <h4>🌐 Sitios Web Recomendados</h4>
+                    <ul>
+                        <li><strong>Forvo.com</strong> - Base de datos masiva de pronunciación nativa</li>
+                        <li><strong>Google Translate</strong> - Escucha pronunciación de palabras chinas</li>
+                        <li><strong>Pinyin.info</strong> - Información exhaustiva sobre el sistema pinyin</li>
+                        <li><strong>Arch Chinese</strong> - Escritura y pronunciación de caracteres</li>
+                        <li><strong>ChinesePod</strong> - Podcast con contenido de pronunciación</li>
+                    </ul>
+                </div>
+
+                <div class="reference-card">
+                    <h4>🎤 Pronuncadores Nativos</h4>
+                    <ul>
+                        <li><strong>Yoyo Chinese (林沫沫)</strong> - Excelente explicación visual</li>
+                        <li><strong>Easy Mandarin TV</strong> - Enfoque lento y claro</li>
+                        <li><strong>Learn Chinese with Mike</strong> - Mucho enfoque en tonos</li>
+                        <li><strong>Lao Wang</strong> - Pronunciación natural y expresiva</li>
+                        <li><strong>Fluent Forever</strong> - Metodología de aprendizaje efectiva</li>
+                    </ul>
+                </div>
+
+                <div class="reference-card">
+                    <h4>🔬 Recursos Académicos</h4>
+                    <ul>
+                        <li><strong>Manual de Fonética Comparada</strong> - Análisis de la pronunciación</li>
+                        <li><strong>Instituto Confucio</strong> - Recursos educativos oficial</li>
+                        <li><strong>Artículos en ResearchGate</strong> - Estudios lingüísticos profundos</li>
+                        <li><strong>Universidades chinas en línea</strong> - Cursos de fonología mandarina</li>
+                        <li><strong>Publicaciones especializadas</strong> - Journals sobre linguística sinológica</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Consejos Finales para el Aprendizaje Efectivo</h3>
+            <button class="toggle-btn" onclick="toggleContent(this)">Mostrar Consejos Finales</button>
+            <div class="toggle-content">
+                <h4>1. Práctica Consistente y Diaria</h4>
+                <p>La pronunciación requiere práctica muscular. Dedica 20-30 minutos DIARIOS a pronunciación, no sesiones largas ocasionales.</p>
+
+                <h4 style="margin-top: 1rem;">2. Grabación y Auto-Evaluación</h4>
+                <p>Grábate frecuentemente. Escucha un hablante nativo, luego grábate, luego compara. Este ciclo acelera el aprendizaje exponencialmente.</p>
+
+                <h4 style="margin-top: 1rem;">3. Busca Comentarios de Nativos</h4>
+                <p>Practica con hablantes nativos si es posible. Un pequeño comentario de un nativo es más valioso que horas de autopráctica incorrecta.</p>
+
+                <h4 style="margin-top: 1rem;">4. Exagera Inicialmente</h4>
+                <p>Al aprender, exagera MUCHO los movimientos tonales, las aspiraciones, etc. Luego reduce gradualmente. Esto asegura claridad.</p>
+
+                <h4 style="margin-top: 1rem;">5. Aprende en Contexto</h4>
+                <p>No practiques solo sílabas aisladas. Aprende palabras completas, frases y expresiones. El contexto ayuda a la memoria.</p>
+
+                <h4 style="margin-top: 1rem;">6. Mantén la Paciencia</h4>
+                <p>La pronunciación perfecta requiere tiempo. Los tonos pueden tomar semanas o meses. Es un maratón, no una carrera. Celebra pequeños avances.</p>
+
+                <h4 style="margin-top: 1rem;">7. Escucha Pasivamente</h4>
+                <p>Escucha chino mandarín mientras haces otras cosas. Tu cerebro absorbe patrones incluso sin práctica activa.</p>
+
+                <h4 style="margin-top: 1rem;">8. Adapta a tu Estilo de Aprendizaje</h4>
+                <p>Si eres visual, usa gráficos de tonos. Si eres cinestésico, usa movimientos de mano. Si eres auditivo, escucha repetidamente. Personaliza tu enfoque.</p>
+            </div>
+        </section>
+
+        <!-- Conclusión -->
+        <section>
+            <h2>🎯 Conclusión</h2>
+            <p>La pronunciación del chino mandarín es un reto inicial para los hispanohablantes, pero es completamente domable con dedicación y el enfoque correcto. Los elementos clave a recordar son:</p>
+
+            <ol style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                <li><strong>Aspiración</strong> en oclusivas (p, t, k)</li>
+                <li><strong>Distinción</strong> entre retroflexas y palatales</li>
+                <li><strong>Tonos</strong> como elemento fundamental (no opcional)</li>
+                <li><strong>Vocal ü</strong> como único sonido sin equivalente en español</li>
+                <li><strong>Cambios de tonos</strong> para sonar natural</li>
+            </ol>
+
+            <p>Este módulo te ha proporcionado las bases teóricas y prácticas para comenzar tu jornada en la pronunciación correcta del chino. El siguiente paso es la <strong>práctica constante y consistente</strong>. Dedica tiempo cada día, busca comentarios de hablantes nativos, y celebra tu progreso.</p>
+
+            <p style="margin-top: 1rem; padding: 1rem; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 8px;">
+                <strong>¡Mucho ánimo!</strong> 加油 (jiāyóu)! La pronunciación correcta abre puertas a una comunicación más profunda con hablantes nativos y una experiencia más rica aprendiendo este fascinante idioma.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Fonética y Fonología I: Pinyin y Tonos</strong></p>
+        <p>Módulo educativo para estudiantes hispanohablantes de Chino Mandarín</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            © 2024-2026 | Basado en libros de referencia autorizados:
+            <br>
+            New Practical Chinese Reader | HSK Standard Course | Métodos comparativos hispanohablantes
+        </p>
+        <p style="margin-top: 1.5rem; font-size: 0.95rem;">
+            <strong>Sugerencia:</strong> Imprime este documento o guárdalo como PDF para referencia futura.<br>
+            <strong>Feedback:</strong> Este material está en desarrollo. Tu retroalimentación es bienvenida.
+        </p>
+    </footer>
+
+    <script>
+        // Función para alternar contenido
+        function toggleContent(button) {
+            const content = button.nextElementSibling;
+            content.classList.toggle('active');
+            button.textContent = content.classList.contains('active') ? 'Ocultar' : 'Mostrar Ejercicios de Pronunciación';
+        }
+
+        // Smooth scroll para navegación
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Cambiar texto de botones dinámicamente
+        document.querySelectorAll('.toggle-btn').forEach((btn, index) => {
+            const labels = [
+                'Mostrar Ejercicios de Pronunciación',
+                'Mostrar Ejercicios de Finales',
+                'Mostrar Estrategias de Aprendizaje',
+                'Mostrar Ejercicios de Sandhi',
+                'Mostrar Errores Comunes',
+                'Mostrar Resumen Crítico',
+                'Mostrar Consejos Finales'
+            ];
+            btn.textContent = labels[index] || 'Mostrar Contenido';
+        });
+    </script>
+</body>
+</html>
